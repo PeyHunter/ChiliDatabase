@@ -9,7 +9,8 @@ public class Main
 
         //Starting my chili Database
 
-        DatabaseConnection.connect();
+        DatabaseConnection.getInstance().getConnection();
 
+        
     }
 }

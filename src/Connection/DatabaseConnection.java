@@ -10,7 +10,16 @@ public class DatabaseConnection
     private static final String USER = "root";
     private static final String PASSWORD = "Kea=Krea1994";
 
-    public static Connection connect()
+    //single instance (singleton)
+    private static DatabaseConnection instance;
+
+    //Connection object
+    private Connection connection;
+
+
+    // private construktor to prevent instantiation
+
+    private Connection connect()
     {
         Connection conn = null;
         try
@@ -25,6 +34,21 @@ public class DatabaseConnection
         return conn;
     }
 
+    // public methode to acces instance
+    public static DatabaseConnection getInstance()
+    {
+        if (instance == null)
+        {
+            instance = new DatabaseConnection();
+        }
+        return instance;
+    }
+
+    // to
+    public Connection getConnection()
+    {
+        return connection;
+    }
 
 
 }
