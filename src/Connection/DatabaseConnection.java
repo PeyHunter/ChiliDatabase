@@ -16,9 +16,12 @@ public class DatabaseConnection
     //Connection object
     private Connection connection;
 
+    private DatabaseConnection()
+    {
+        connection = connect();
+    }
 
     // private construktor to prevent instantiation
-
     private Connection connect()
     {
         Connection conn = null;

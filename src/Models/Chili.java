@@ -95,4 +95,16 @@ public class Chili
     {
         this.comments = comments;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Chili ID: " + chiliId +
+                ", Name: " + name +
+                ", Scoville: " + scoville +
+                ", Scale ID: " + scaleId +
+                ", Rating: " + (rating != null ? rating : "N/A") +  // If rating is null, return "N/A"
+                ", Comments: " + (comments != null ? comments : "No comments");  // If comments are null, return a default message
+    }
+
 }
